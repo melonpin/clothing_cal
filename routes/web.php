@@ -12,3 +12,4 @@
 */
 
 Route::get('/', 'ClothController@home');
+Route::get('/clothes/reslt', 'ClothController@result');

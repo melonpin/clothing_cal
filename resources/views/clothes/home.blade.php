@@ -1,11 +1,44 @@
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
     <head>
         <meta charset="utf-8">
-        <title>Blog</title>
+        <title>服を買い換える時期を計算するサイト</title>
+        <link rel="stylesheet" href="/css/menu.css">
+         <script type="text/javascript" src="/js/menu.js"></script>
     </head>
     <body>
-        <h1>服の買い換え時期計算サイト</h1>
-        <form action="/posts" method="POST">
+        
+    <div class="hamburger">
+  <span></span>
+  <span></span>
+  <span></span>
+</div>
+
+<header class="header">
+  <div class="logo">服の買い換え時期計算サイト</div><!-- /.logo -->
+
+  <!-- ハンバーガーメニュー部分 -->
+  <div class="drawer">
+    <!-- ハンバーガーメニューの表示・非表示を切り替えるチェックボックス -->
+    <input type="checkbox" id="drawer-check" class="drawer-hidden" >
+
+    <!-- ハンバーガーアイコン -->
+    <label for="drawer-check" class="drawer-open"><span></span></label>
+
+    <!-- 追加：メニューを閉じるための要素 -->
+    <label for="drawer-check" class="drawer-close"></label>
+
+    <!-- メニュー -->
+    <nav class="drawer-content">
+      <ul class="drawer-list">
+        <li class="drawer-item">
+          <a href="App/resources/view/clothes/result.blade.php">登録結果</a>
+        </li>
+    </nav>
+
+  </div>
+</header>
+        
+        <form action="/options" method="POST">
             @csrf
             <h2>服の状態</h2>
             <p class = condition>
@@ -43,9 +76,7 @@
                  </select>
             </p>
         
-        　　<input type="submit" value="計算する"/>
-           
-   
+        　<input type="submit" value="保存"/>
    
         </form>
         

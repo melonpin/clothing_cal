@@ -12,5 +12,10 @@ class ClothController extends Controller
     {
     return view('clothes/home')->with(['options' => $option->get()]);
     }
+    
+    public function result()
+    {
+    return view('clothes/result');
+    }
 }
 ?>
