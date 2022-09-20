@@ -12,6 +12,7 @@
   <span></span>
   <span></span>
 </div>
+<form action="/clothes/registration" method="POST">
 
 <header class="header">
   <div class="logo">服の買い換え時期計算サイト</div><!-- /.logo -->
@@ -31,52 +32,52 @@
     <nav class="drawer-content">
       <ul class="drawer-list">
         <li class="drawer-item">
-          <a href="App/resources/view/clothes/result.blade.php">登録結果</a>
+         <input type="submit" value="登録結果"/>
         </li>
     </nav>
 
   </div>
 </header>
-        
-        <form action="/options" method="POST">
+        </form>
+    <form action="/clothes/result" method="POST">    
             @csrf
             <h2>服の状態</h2>
             <p class = condition>
-                <select name="post[category_id]">
+                <select name="condition">
                     @foreach($options as $option)
-                        <option value="{{ $option->id }}">{{ $option->condition }}</option>
+                        <option value ="{{ $option->condition }}">{{ $option->condition }}</option>
                     @endforeach
                 </select>
             </p>
             
             <h2>服の種類</h2>
             <p class = type>
-                <select name="post[category_id]">
+                <select name="type">
                     @foreach($options as $option)
-                        <option value="{{ $option->id }}">{{ $option->type }}</option>
+                        <option value="{{ $option->type }}">{{ $option->type }}</option>
                     @endforeach
                  </select>
             </p>
             
             <h2>服の素材</h2>
             <p class = material>
-                <select name="post[category_id]">
+                <select name="material">
                     @foreach($options as $option)
-                        <option value="{{ $option->id }}">{{ $option->material }}</option>
+                        <option value="{{ $option->material }}">{{ $option->material }}</option>
                     @endforeach
                  </select>
             </p>
             
             <h2>選択頻度の予定</h2>
-            <p class = material>
-                <select name="post[category_id]">
+            <p class = frequency>
+                <select name="frequency">
                     @foreach($options as $option)
-                        <option value="{{ $option->id }}">{{ $option->frequency }}</option>
+                        <option value="{{ $option->frequency }}">{{ $option->frequency }}</option>
                     @endforeach
                  </select>
             </p>
         
-        　<input type="submit" value="保存"/>
+        　<input type="submit" value="計算する"/>
    
         </form>
         

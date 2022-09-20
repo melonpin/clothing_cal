@@ -13,9 +13,9 @@ class ClothController extends Controller
     return view('clothes/home')->with(['options' => $option->get()]);
     }
     
-    public function result()
+    public function result(Option $option)
     {
-    return view('clothes/result');
+    return view('clothes/result')->with(['options' => $option->get()]);
     }
 }
 ?>

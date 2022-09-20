@@ -12,4 +12,5 @@
 */
 
 Route::get('/', 'ClothController@home');
-Route::get('/clothes/reslt', 'ClothController@result');
+Route::get('/clothes/result', 'ClothController@result');
+Route::post('/clothes/result', 'ClothController@result');
